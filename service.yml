@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: geomaps-frontend-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: geomaps-frontend-nginx
   ports:
-      - nodePort: 32000
+      - name: http-port
         protocol: TCP
         port: 80
+        targetPort: http-web-svc
