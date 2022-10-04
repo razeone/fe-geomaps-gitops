@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geomaps-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: geomaps-frontend-nginx
+  template:
+    metadata:
+      labels:
+        app: geomaps-frontend-nginx
+    spec:
+      containers:
+      - name: geomaps-frontend
+        image: docker.io/razeonex/fe-geomaps:v0.1
+        ports:
+        - containerPort: 8080
