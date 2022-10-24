@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: geomaps-frontend
-        image: docker.io/razeonex/fe-geomaps:v0.2.3
+        image: docker.io/razeonex/fe-geomaps:v0.2.4
         ports:
         - containerPort: 80
